@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# if not in the correct directory, exit
+if [ $(basename $(pwd)) != "dotfiles-zsh" ]; then
+  echo "doesn't look like you're in dotfiles-zsh/"
+  exit 1
+fi
+
 sh install-scripts/install_packages.sh
 
 sh install-scripts/create_symlinks.sh
